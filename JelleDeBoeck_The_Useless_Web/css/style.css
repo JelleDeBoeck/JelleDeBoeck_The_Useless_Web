@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: url(../images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.clock {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 100%;
+    border: 8px solid #535E63;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 10% 20%;
+}
+
+.clock .top {
+    position: absolute;
+    width: 2px;
+    height: 6px;
+    background-color: #262626;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.clock .right {
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    background-color: #262626;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.clock .bottom {
+    position: absolute;
+    width: 2px;
+    height: 6px;
+    background-color: #262626;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+.clock .left {
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    background-color: #262626;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.clock .center {
+    height: 4px;
+    width: 4px;
+    background-color: #262626;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.clock .hour {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 4s infinite linear;
+}
+
+.clock .hour:before {
+    content: "";
+    height: 45px;
+    width: 2px;
+    background-color: #262626;
+    position: absolute;
+    top: 22.5px;
+}
+
+.clock .minute {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 2s infinite linear;
+}
+
+.clock .minute:before {
+    position: absolute;
+    content: "";
+    background-color: #262626;
+    height: 30px;
+    width: 1px;
+    top: 37.5px;
+}
+
+.clock .second {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    animation: time 1s infinite linear;
+}
+
+.clock .second:before {
+    position: absolute;
+    content: "";
+    background-color: #fd1111;
+    height: 33.75px;
+    width: 1px;
+    top: 33.75px;
+}
+
+
+@keyframes time {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.indicator {
+    position: absolute;
+    left: 47.9%;
+    top: 6.8%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+.number-container {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #FFC200;
+    animation: countDownUp 2s linear infinite;
+}
+
+.arrow-up,
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin: 0 10px;
+}
+
+.arrow-up {
+    border-bottom: 15px solid #ccc;
+}
+
+.arrow-down {
+    border-top: 15px solid #ccc; 
+}
+
+.arrow-up.active {
+    border-bottom: 15px solid #ffcc00; 
+}
+
+.arrow-down.active {
+    border-top: 15px solid #ffcc00; 
+}
